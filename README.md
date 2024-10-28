@@ -1,10 +1,45 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Grup Sohbet Uygulaması
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Bu proje, kullanıcıların gruplar oluşturabileceği, gruplara katılabileceği ve gruplar içinde gerçek zamanlı sohbet edebileceği bir mobil uygulamadır. Grup kurucuları grubu silebilir, kullanıcılar ise gruplardan çıkabilir.
 
-## Step 1: Start the Metro Server
+## Özellikler
+
+- **Kullanıcı Kayıt ve Giriş**: Yeni kullanıcı kaydı ve giriş işlemleri yapılabilir.
+- **Grup Oluşturma**: Kullanıcılar yeni gruplar oluşturabilir.
+- **Gruba Katılma**: Kullanıcılar mevcut gruplara katılabilir.
+- **Gerçek Zamanlı Mesajlaşma**: Kullanıcılar gruplarda gerçek zamanlı olarak sohbet edebilir.
+- **Grup Yönetimi**:
+  - **Grup Silme**: Grup kurucusu grubu silebilir. Grup silindiğinde gruptaki tüm kullanıcılar bu durumdan haberdar edilir.
+  - **Gruptan Çıkma**: Kullanıcılar gruplardan çıkabilir.
+- **Grup Üye Listesi**: Her grubun üye listesi görüntülenebilir.
+
+## Kurulum
+
+1. Bu projeyi bilgisayarınıza klonlayın:
+   ```bash
+   git clone https://github.com/keremerguner/SocketApp2.git
+   cd SocketApp2
+   ```
+
+2. **Backend Kurulumu**
+   - `server` dizinine gidin:
+     ```bash
+     cd server
+     ```
+   - Gerekli bağımlılıkları yükleyin:
+     ```bash
+     npm install
+     ```
+   - `.env` dosyasını oluşturun ve MongoDB bağlantı adresinizi ve diğer gerekli değişkenleri tanımlayın:
+     ```
+     MONGO_URI=<your-mongo-uri>
+     ```
+   - Sunucuyu başlatın:
+     ```bash
+     node index.
+     
+### Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
@@ -42,38 +77,55 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Kullanım
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- **Grup Oluştur**: Giriş yaptıktan sonra "Grup Oluştur" düğmesine tıklayın ve bir grup adı ve kodu belirleyin.
+- **Gruba Katıl**: Mevcut bir gruba katılmak için "Gruba Katıl" düğmesine basarak grup kodunu girin.
+- **Sohbet**: Bir gruba katıldığınızda, mesaj göndererek sohbete katılabilirsiniz.
+- **Gruptan Çık**: Sohbet ekranının sağ üst köşesindeki "Gruptan Çık" düğmesi ile gruptan çıkabilirsiniz.
+- **Grubu Sil**: Grubun kurucusuysanız, "Grubu Sil" düğmesine basarak grubu tamamen silebilirsiniz. Grup silindiğinde, tüm üyeler bilgilendirilir.
 
-## Step 3: Modifying your App
+## Proje Yapısı
 
-Now that you have successfully run the app, let's modify it.
+```plaintext
+├── src
+│   ├── pages
+│   │   ├── components
+│   │   │   ├── Login.tsx
+│   │   │   ├── Register.tsx
+│   │   │   ├── Home.tsx
+│   │   │   ├── Chat.tsx
+│   │   │   ├── CreateGroup.tsx
+│   │   │   └── JoinGroup.tsx
+│   │   ├── components
+│   │   └── App.tsx
+├── server
+│   ├── models
+│   │   ├── User.js
+│   │   ├── Message.js
+│   │   └── Group.js
+│   ├── routes
+│   │   ├── auth.js
+│   │   ├── group.js
+│   │   └── user.js
+│   └── index.js
+│   ├── .env
+└── README.md
+```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Geliştirme
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- Gerçek zamanlı mesajlaşma `Socket.IO` kullanılarak gerçekleştirilmiştir.
+- Grup ve kullanıcı verileri `MongoDB` veritabanında saklanmaktadır.
 
-## Congratulations! :tada:
+## Katkı
 
-You've successfully run and modified your React Native App. :partying_face:
+1. Projeyi fork edin.
+2. Yeni bir özellik dalı (`feature/AmazingFeature`) oluşturun.
+3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`).
+4. Dalınıza push edin (`git push origin feature/AmazingFeature`).
+5. Bir Pull Request açın.
 
-### Now what?
+## Lisans
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Bu proje MIT Lisansı altında lisanslanmıştır. Ayrıntılar için `LICENSE` dosyasına bakın.
