@@ -1,7 +1,7 @@
 
 # Grup Sohbet Uygulaması
 
-Bu proje, kullanıcıların gruplar oluşturabileceği, gruplara katılabileceği ve gruplar içinde gerçek zamanlı sohbet edebileceği bir mobil uygulamadır. Grup kurucuları grubu silebilir, kullanıcılar ise gruplardan çıkabilir.
+Bu proje React Native ile geliştirilmiş olup ANDROID ve IOS platformunda çalışmaktadır. Kullanıcıların gruplar oluşturabileceği, gruplara katılabileceği ve gruplar içinde gerçek zamanlı sohbet edebileceği bir mobil uygulamadır. Grup kurucuları grubu silebilir, kullanıcılar ise gruplardan çıkabilir.
 
 ## Özellikler
 
@@ -18,8 +18,8 @@ Bu proje, kullanıcıların gruplar oluşturabileceği, gruplara katılabileceğ
 
 1. Bu projeyi bilgisayarınıza klonlayın:
    ```bash
-   git clone https://github.com/keremerguner/SocketApp2.git
-   cd SocketApp2
+   git clone https://github.com/keremerguner/SocketApp-React-Native
+   cd SocketApp-React-Native
    ```
 
 2. **Backend Kurulumu**
